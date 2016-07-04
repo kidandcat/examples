@@ -18,12 +18,7 @@ app.use(function(req, res, next) {
 
 //ROUTES
 //buy
-var buy = require('./api/buy');
-app.use('/', buy);
-
-
-
-
+app.use('/', require('./api/buy'));
 
 
 app.get('/', function(req, res, next) {
