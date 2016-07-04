@@ -17,11 +17,9 @@ app.use(function(req, res, next) {
 
 
 //ROUTES
-
-// /list
-app.get('/list', function(req, res, next) {
-
-});
+//buy
+var buy = require('./api/buy');
+app.use('/', buy);
 
 
 
