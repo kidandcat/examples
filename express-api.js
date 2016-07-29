@@ -1,8 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const helmet = require('helmet');
+const scribe = require('scribe-js')();
 
 const PORT = 8000;
+
+app.use(scribe.express.logger());
+app.use('/logs', scribe.webPanel());
+
+app.use(helmet());
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
